@@ -25,6 +25,9 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
+        <activity
+            android:name="com.Evg.hellokitty.AboutActivity"
+            android:label="@string/about_title"/>
     </application>
 
 </manifest>

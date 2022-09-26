@@ -1,7 +1,9 @@
 package com.Evg.hellokitty
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageButton
 import android.widget.TextView
@@ -17,8 +19,9 @@ class MainActivity : AppCompatActivity() {
         HelloTextView = findViewById(R.id.textView)
         editText = findViewById(R.id.editText)
 
-        val imageButton = findViewById<ImageButton>(R.id.imageButton)
-        val imageButton2 = findViewById<ImageButton>(R.id.imageButton2)
+        val imageButton : ImageButton = findViewById(R.id.imageButton)
+        val imageButton2 : ImageButton = findViewById(R.id.imageButton2)
+        val aboutButton : Button = findViewById(R.id.button_about)
 
         imageButton.setOnClickListener {
             if (editText.text.isEmpty()){
@@ -35,5 +38,11 @@ class MainActivity : AppCompatActivity() {
                 HelloTextView.text = "Пока " + editText.text
             }
         }
+
+        aboutButton.setOnClickListener{
+            val intent = Intent(this@MainActivity, AboutActivity::class.java)
+            startActivity(intent)
+        }
+
     }
 }
